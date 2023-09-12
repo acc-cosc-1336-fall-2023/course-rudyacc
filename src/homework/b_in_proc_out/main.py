@@ -1,20 +1,7 @@
-import devprocess
+import output
 
-result = devprocess.floating_point_division(5, 2) 
-   
-print(result)
-
-result = devprocess.square_value(5)
+result = output.multiply_numbers(6, 6)
 
 print(result)
 
-result = input('Get value ')
-
-print(result)
-
-result = input('Get a value to square ')
-result = int(result)
-
-result = devprocess.square_value(result)
-
-print(result)
+#
