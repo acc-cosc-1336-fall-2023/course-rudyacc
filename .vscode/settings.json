@@ -1,8 +1,10 @@
 {
     "cSpell.words": [
-        "devprocess"
+        "devprocess",
+        "notted"
     ],
     "python.analysis.extraPaths": [
-        "./src/examples/a_example"
+        "./src/examples/a_example",
+        "./tests/homework/b_in_proc_out"
     ]
 }
