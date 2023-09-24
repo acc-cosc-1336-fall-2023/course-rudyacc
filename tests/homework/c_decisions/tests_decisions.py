@@ -14,3 +14,4 @@ class Test_Config(unittest.TestCase):
         self.assertEqual(get_faculty_rating (0.66), "Needs Improvement")
         self.assertEqual(get_faculty_rating (0.45), "Unacceptable")
         self.assertEqual(get_faculty_rating (-1), "Invalid Rating")
+        

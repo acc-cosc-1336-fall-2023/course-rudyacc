@@ -1,51 +1,22 @@
-def test_config():
-    return True
+def get_options_ratio (option, total):
+    ratio = option / total
+    return ratio
 
-def get_and_result(bool1, bool2):
-    result = bool1 and bool2
-    return result
+def get_faculty_rating(ratio):
+    rating = ""
+    if (ratio >= 0.9 and ratio <= 1.0):
+        rating = "Excellent"
+    elif(ratio >= 0.8 and ratio < 0.9):
+        rating = "Very Good"
+    elif(ratio >= 0.7 and ratio < 0.8):
+        rating = "Good"
+    elif(ratio >= 0.6 and ratio < 0.7):
+        rating = "Needs Improvement"
+    elif(ratio >= 0 and ratio <= 0.59):
+        rating = "Unacceptable"
 
-def get_or_result(bool1, bool2):
-    result = bool1 or bool2
-    return result
-
-def get_notted_value(bool1):
-    return not bool1
-
-def is_even(num1):
-    result = num1 % 2 == 0 #is the remainder of num / 2 equal to zero
-
-def is_odd(num1):
-    result = num1 % 2 == 1
-    return result
-
-def is_vowel(letter):
-    result = letter == 'a' or letter == 'e' or letter == 'i' or letter == 'o' or letter == 'u'
-    return result
-
-def is_consonant(letter):
-    result = letter != 'a' and letter != 'e' and letter != 'i' and letter != 'o' and letter != 'u'
-    return result
-
-def is_overtime(hours):
-    result = False 
-    result = hours > 40
-    result = result
-    
-def get_letter_grade(grade):
-    letter_grade = ""
-    
-    if(grade >= 90 and grade <= 100):
-        letter_grade = "A"
-    elif (grade >= 80 and grade < 90):
-        letter_grade = "B"   
-    elif (grade >= 70 and grade < 80):
-        letter_grade = "C"
-    elif (grade >= 60 and grade < 70):
-        letter_grade = "D"
-    elif (grade >= 0 and grade < 60):
-        letter_grade = "F"         
     else:
-        letter_grade = "Invalid Grade"
-     
-    return letter_grade
+        rating = "Invalid Rating"
+
+    return rating
+
