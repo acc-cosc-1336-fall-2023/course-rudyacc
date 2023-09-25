@@ -108,3 +108,12 @@ def nested_while_loop(row, col):
             
         print("inner loop complete")
     
+    def nested_for_loop(row, col):
+        
+        for i in range(row):
+            print("i:", i, "outer loop")
+        
+            for j in range(col):
+                print("j:", j, "inner loop")
+            
+            print("inner loop complete")
