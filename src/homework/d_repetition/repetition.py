@@ -18,7 +18,3 @@ def sum_odd_numbers(num):
         num = num - 2
 
     return sum
-
-#like i want to get this but its been bugging me that i cant
-def sum_odd_numbers():
-    print 
