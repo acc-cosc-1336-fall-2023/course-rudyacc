@@ -8,3 +8,4 @@ lang = "Python"
 print(lang[0])
 lang = lang.replace('y', 'Y').replace('o', 'O')
 print(lang)
+
