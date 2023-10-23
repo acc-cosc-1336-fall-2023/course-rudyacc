@@ -96,5 +96,5 @@ class Test_Config(unittest.TestCase):
         self.assertEqual(min(list), 1)
         
         
-            
+    
         

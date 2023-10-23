@@ -90,10 +90,5 @@ def verify_dna(dna):
     else:
         return 'DNA'
    
-    
-    
-    
-    
-        
-    
-        
+   
+   
