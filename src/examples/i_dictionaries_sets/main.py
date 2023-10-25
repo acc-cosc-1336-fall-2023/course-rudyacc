@@ -4,19 +4,25 @@ import dictionaries
 
 phonebook = {}#empty dictionary
 
-key = input("Enter key: ")
-value = input("Enter value: ")
+dictionaries.add_friend_phonebook('Chris', '555-1111', phonebook)
+dictionaries.add_friend_phonebook('Katie', '555-2222', phonebook)
 
-phonebook[key] = value
+for name, value in phonebook.items():
+    print(name, value)
 
-print(phonebook)
+print(' \nUpdate Katie \n')
+dictionaries.update_friend_phonebook('Katie', '555-2345', phonebook)
 
-key = input("Enter key: ")
-value = input("Enter value: ")
+for name, value in phonebook.items():
+    print(name, value)
 
-phonebook[key] = value
-
-print(phonebook)
+print('\nDelete Chris \n')    
+dictionaries.delete_friend_phonebook('Chris', phonebook)
+    
+for name, value in phonebook.items():
+        print(name, value)
+        
+        
 
 
     
