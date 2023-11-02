@@ -1,50 +1,52 @@
-from dictionary import get_p_distance_matrix
-#import dictionary
-
-def is_valid_sequence(sequence):
-    valid_chars = {'A', 'C', 'G', 'T', 'a', 'c', 'g', 't'}
-    return all(char in valid_chars for char in sequence)
-
-def get_valid_sequence_count():
+from dictionary import add_inventory, remove_inventory_widget
+def display_menu():
+    print("Inventory Menu\n")
+    print("1- Add or Update Item")
+    print("2- Delete Item")
+    print("3- Exit")
+    print("4- Check Inventory")
+def main():
+    inventory = {}
     while True:
-        n = input("Enter the number of sequences: ")
-        if not n.isdigit():
-            print("Invalid input. Please enter a valid number for the number of sequences.")
+        display_menu()
+        choice = input("Select an option (1, 2, 3, or 4): ")
+        if choice == '1':
+            while True:
+                item_name = input("Enter the item name: ")
+                try:
+                    quantity = int(input("Enter the quantity: "))
+                    add_inventory(inventory, item_name, quantity)
+                    print(f"{item_name} with a quantity of {quantity} has been added or updated.")
+                except ValueError:
+                    print("Invalid quantity. Please enter a valid number.")
+                another_item = input("Would you like to add another item to inventory (Y/N)? ").strip().lower()
+                if another_item not in ['y', 'yes']:
+                    break
+        elif choice == '2':
+            while True:
+                item_name = input("Enter the item name to delete: ")
+                result = remove_inventory_widget(inventory, item_name)
+                print(result)
+                another_deletion = input("Do you want to delete another item (Y/N)?: ").strip().lower()
+                if another_deletion not in ['y', 'yes']:
+                    break 
+        elif choice == '3':
+            print("Exiting the program.")
+            break
+        elif choice == '4':
+            if not inventory:  
+                print("No Inventory to Count. Add Items if you have any.")
+            else:
+                for item_name, quantity in inventory.items():
+                    print(f"{item_name}: {quantity}")
+                menu = input("Press Enter to go back to the main menu")
+                if menu != None:
+                    print("Going to the main menu")
         else:
-            return int(n)
-
-
-while True:
-    print("\nMenu:")
-    print("1- Get P distance matrix")
-    print("2- Exit")
-    choice = input("Select an option: ")
-
-    if choice == '1':
-        n = get_valid_sequence_count()
-        sequences = []
-        length = None
-
-        for i in range(n):
-            sequence = input(f"Enter sequence {i + 1}: ").strip()
-            if length is None:
-                length = len(sequence)
-            elif len(sequence) != length:
-                print("The sequences you entered are not the same length, please try again:")
-                break
-            elif not is_valid_sequence(sequence):
-                print("Invalid characters in the sequence. Please use only 'A', 'C', 'G', or 'T' (case-insensitive).")
-                break
-            sequences.append(list(sequence))
-        else:
-            distance_matrix = get_p_distance_matrix(sequences)
-            print("P-distance matrix:")
-            for row in distance_matrix:
-                print(' '.join(f'{distance:.5f}' for distance in row))
-    elif choice == '2':
-        print("Exiting the program.")
-        break
-    else:
-        print("Invalid option. Please choose 1 or 2.")
+            print("Select a Valid Input, please try again.")
+main()
+            
+            
+                     
 
         
