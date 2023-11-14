@@ -1,8 +1,14 @@
+import random
+
 class BankAccount:
     __balance = 0 #hide it from the other classes
     
-    def __init__(self, balance): # constructor --initialize class data/variables
-        self.__balance = balance
+    def __init__(self, balance):
+        if(balance >= 0):
+            # constructor --initialize class data/variables
+            self.__balance = balance
+        else:
+            self.__get_balance_from_db()
         
     
     def get_balance(self): #other classes can see get_balance
@@ -18,6 +24,9 @@ class BankAccount:
         if(amount > 0 and amount <= self.__balance):
             self.__balance -= amount
             
+    def __get_balance_from_db(self):
+        self.__balance = random.randint(0, 10000)
+    
             
         
    
