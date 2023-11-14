@@ -1,3 +1,12 @@
+import random
+import src.examples.j_classes.customer
+
+def scan_card(customer_list_size):
+    choice = print('Enter something... ')#pause
+    return random.randint(0, customer_list_size-1)
+
+    
+    
 def display_menu():
     print('COSC Bank')
     print('1-Deposit')
@@ -7,11 +16,28 @@ def display_menu():
     
 def run_menu(atm):
     
-    menu_choice = 0
+    list_customers = [customer.Customer(),
+                      customer.Customer(),
+                      customer.Customer(),]
+                      
+        
+    while(True):
+        menu_choice = 0
+        customer_index = scan_card(len(list_customers))
+        customer = list_customers[customer_index]
+        
+        account_index = print("Enter 1 for checking 2 for savings")
+        
+        account = customer.get_account(account_index)
+        
+        atm = atm.ATM(account)
+        
+        
+        
     
-    while(menu_choice != '4'):
-        display_menu()
-        menu_choice = input("Enter choice: ")
+        while(menu_choice != '4'):
+            display_menu()
+            menu_choice = input("Enter choice: ")
         
 def handle_menu(menu_choice, atm):
     if(menu_choice == '1'):
