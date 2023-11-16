@@ -5,6 +5,7 @@ class BankAccount:
     
     def __init__(self, balance):
         if(balance >= 0):
+            print('balance', balance)
             # constructor --initialize class data/variables
             self.__balance = balance
         else:

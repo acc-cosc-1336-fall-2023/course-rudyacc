@@ -3,6 +3,7 @@ from src.examples.j_classes.customer import Customer
 from src.examples.j_classes.atm import ATM
 
 
+
 def scan_card(customer_list_size):
     random.seed(int(time.time()))
     choice = print('Enter something... ')#pause
@@ -19,11 +20,19 @@ def display_menu():
     
 def run_menu():
     
+    list_customers = []
+    
     random.seed(int(time.time()))
-    list_customers = [Customer(),
-                      Customer(),
-                      Customer(),]
-                      
+    customer = Customer(-1, -1)
+    list_customers.append(customer)
+    
+    random.seed(int(time.time()))
+    customer = Customer(-1, -1)
+    list_customers.append(customer)
+    
+    random.seed(int(time.time()))
+    customer = Customer(-1, -1)
+    list_customers.append(customer)
         
     while(True):
         menu_choice = 0
