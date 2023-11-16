@@ -10,6 +10,7 @@ class Customer:
         self.__list_accounts.append(src.examples.j_classes.bank_account.BankAccount(-1))
     
     def get_account(self, index):
+        print(index, len(self.__list_accounts))
         return self.__list_accounts[index]
     
     
